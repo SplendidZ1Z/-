@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //     编写一个双色球抽奖程序
+    // 双色球规则 有红蓝两种球
+    // 红色球 1-33
+    // 蓝色球 1-16
+
+    // 每次抽奖 从红色球中选取6个不能重复
+    // 蓝色球选取一个
+
+    // 一共生成5组中间结果 输出到控制台
+    var redBall = [], blueBall = []
+    for (i = 1; i <= 33; i++) {
+      redBall.push(i)
+    }
+    for (j = 1; j <= 16; j++) {
+      blueBall.push(j)
+    }
+    for (var k = 1; k <= 5; k++) {
+      var res = []
+      //将五个红色球放入数组的前五个位置
+      for (var i = 1; i <= 6; i++) {
+        var random = Math.round(Math.random() * (redBall.length - 1))
+        res.push(redBall[random])
+        redBall.splice(random, 1)
+      }
+      //将一个蓝色球放入数组的第六个位置
+      res.push(blueBall[Math.round(Math.random() * 15)])
+      console.log(res)
+    }
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red,
+    .yellow,
+    .green {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .red {
+      background-image: radial-gradient(#ff4218 60%, #483331 60%);
+      animation: redUp 10s linear infinite;
+    }
+
+    /* 红灯五秒钟 */
+    @keyframes redUp {
+      0% {
+        background-image: radial-gradient(#ff0f02 60%, #483331 60%);
+      }
+
+      49% {
+        background-image: radial-gradient(#ff0f02 60%, #483331 60%);
+      }
+
+      50% {
+        background-image: radial-gradient(#731c09 60%, #483331 60%);
+      }
+
+      100% {
+        background-image: radial-gradient(#731c09 60%, #483331 60%);
+      }
+    }
+
+    .yellow {
+      background-image: radial-gradient(#624b0e 60%, #483331 60%);
+      animation: yellowUp 10s linear infinite;
+    }
+
+    /* 黄灯两秒钟 */
+    @keyframes yellowUp {
+      0% {
+        background-image: radial-gradient(#624b0e 60%, #483331 60%);
+      }
+
+      79% {
+        background-image: radial-gradient(#624b0e 60%, #483331 60%);
+      }
+
+      80% {
+        background-image: radial-gradient(yellow 60%, #483331 60%);
+      }
+
+      100% {
+        background-image: radial-gradient(yellow 60%, #483331 60%);
+      }
+    }
+
+    .green {
+      background-image: radial-gradient(#14570d 60%, #483331 60%);
+      animation: greenUp 10s linear infinite;
+    }
+
+    /* 绿灯三秒钟 */
+    @keyframes greenUp {
+      0% {
+        background-image: radial-gradient(#14570d 60%, #483331 60%);
+      }
+
+      49% {
+        background-image: radial-gradient(#14570d 60%, #483331 60%);
+      }
+
+      50% {
+        background-image: radial-gradient(rgb(12, 240, 12) 60%, #483331 60%);
+      }
+
+      79% {
+        background-image: radial-gradient(rgb(12, 240, 12) 60%, #483331 60%);
+      }
+
+      80% {
+        background-image: radial-gradient(#14570d 60%, #483331 60%);
+      }
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .outbox {
+      width: 340px;
+      height: 645px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .up {
+      width: 90px;
+      height: 20px;
+      background-color: #556654;
+    }
+
+    .mid {
+      width: 170px;
+      height: 440px;
+      background-color: #555054;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .foot {
+      width: 75px;
+      height: 185px;
+      background-color: #555054;
+    }
+
+    .l1 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 40px;
+      left: -45px;
+      border-radius: 0 0 0 20px;
+    }
+
+    .r1 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 40px;
+      right: -45px;
+      border-radius: 0 0 20px 0;
+    }
+
+    .l2 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 170px;
+      left: -45px;
+      border-radius: 0 0 0 20px;
+    }
+
+    .r2 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 170px;
+      right: -45px;
+      border-radius: 0 0 20px 0;
+    }
+
+    .l3 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 300px;
+      left: -45px;
+      border-radius: 0 0 0 20px;
+    }
+
+    .r3 {
+      width: 45px;
+      height: 80px;
+      background-color: #555054;
+      position: absolute;
+      top: 300px;
+      right: -45px;
+      border-radius: 0 0 20px 0;
+    }
+
+    .crossline {
+      width: 340px;
+      height: 100px;
+      background-image: repeating-linear-gradient(-70deg, #000 0, #000 17px, #fff 17px, #fff 34px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outbox">
+    <div class="up"></div>
+    <div class="mid">
+      <div class="l1"></div>
+      <div class="l2"></div>
+      <div class="l3"></div>
+      <div class="r1"></div>
+      <div class="r2"></div>
+      <div class="r3"></div>
+      <div class="red"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+    </div>
+    <div class="foot"></div>
+  </div>
+  <div class="crossline"></div>
+  <!-- <script>
+    setTimeout(getred(),1000){
+      
+    }
+    function getRed(){
+      var red = document.querySelector('.red')
+    }
+  </script> -->
+</body>
+
+</html>

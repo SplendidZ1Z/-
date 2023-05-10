@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 编写一个生自动出题程序  
+    // 随机生成 100 以内 加减乘除 除法题 必须能整除
+    // 封装成函数 函数接受一个数字n作为参数
+    // 输入几就出几道题 数字n最小是5 最大是 20
+
+    // 在前面基础上 将出题输出到 浏览器 用prompt 显示 
+    // 并输入结果 统计正确率 将最后的正确率 输出来
+    function giveQues (n) {
+      var count = 0
+      for (var i = 1; i <= n; i++) {
+        var random = Math.floor(Math.random() * 4 + 1)
+        switch (random) {
+          case 1: var random1 = Math.floor(Math.random() * 100)
+            var random2 = Math.floor(Math.random() * 100)
+            var res = prompt(random1 + '+' + random2 + '=' + '?')
+            if (res == random1 + random2) {
+              count++
+              alert('答对啦！')
+            } else {
+              alert('答错啦！')
+            }
+            break
+          case 2: var random1 = Math.floor(Math.random() * 100)
+            var random2 = Math.floor(Math.random() * 100)
+            var res = prompt(random1 + '-' + random2 + '=' + '?')
+            if (res == random1 - random2) {
+              count++
+              alert('答对啦！')
+            } else {
+              alert('答错啦！')
+            }
+            break
+          case 3: var random1 = Math.floor(Math.random() * 100)
+            var random2 = Math.floor(Math.random() * 100)
+            var res = prompt(random1 + '*' + random2 + '=' + '?')
+            if (res == random1 * random2) {
+              count++
+              alert('答对啦！')
+            } else {
+              alert('答错啦！')
+            }
+            break
+          case 4:
+            while (true) {
+              var random1 = Math.floor(Math.random() * 100)
+              var random2 = Math.floor(Math.random() * 100)
+              if (random1 / random2 - Math.floor(random1 / random2) == 0) {
+                break
+              }
+            }
+            var res = prompt(random1 + '➗' + random2 + '=' + '?')
+            if (res == random1 / random2) {
+              count++
+              alert('答对啦！')
+            } else {
+              alert('答错啦！')
+            }
+            break
+        }
+      }
+      console.log('答对了' + count + '道题，答错了' + (n - count) + '道题，正确率是' + count / n * 100 + '%')
+    }
+    while (true) {
+      var num = prompt('请输入你要的题数(5-20之间)')
+      if (num <= 20 && num >= 5) {
+        break
+      } else {
+        alert('你输入的格式不对，请重新输入')
+      }
+    }
+    giveQues(num)
+  </script>
+</body>
+
+</html>
